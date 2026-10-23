@@ -1,0 +1,50 @@
+name: Geographic data correction
+description: Suggest a new feature or correction to map data
+title: "[Map data]: "
+labels: [data]
+body:
+  - type: dropdown
+    id: change
+    attributes:
+      label: Change type
+      options: [Add feature, Correct feature, Remove duplicate, Remove incorrect feature, Other]
+    validations:
+      required: true
+  - type: input
+    id: region
+    attributes:
+      label: Country or region
+      description: A general area is sufficient if exact coordinates are sensitive.
+    validations:
+      required: true
+  - type: input
+    id: feature
+    attributes:
+      label: Feature type
+      placeholder: Place, road, building, boundary, address, water, etc.
+    validations:
+      required: true
+  - type: input
+    id: location
+    attributes:
+      label: Coordinates or map link (optional)
+      description: Do not publish private residences or sensitive locations without authorization.
+  - type: textarea
+    id: current
+    attributes:
+      label: Current data and issue
+    validations:
+      required: true
+  - type: textarea
+    id: proposed
+    attributes:
+      label: Proposed correction
+    validations:
+      required: true
+  - type: textarea
+    id: sources
+    attributes:
+      label: Evidence and source licensing
+      description: Explain how the change was verified and whether the source permits reuse. Do not copy proprietary map data.
+    validations:
+      required: true
